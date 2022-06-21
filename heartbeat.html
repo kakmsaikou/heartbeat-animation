@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;  
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1.0);
+            }
+            100% {
+                transform: scale(3);
+            }
+        }
+
+        #heart {
+            margin: 200px;
+            display: inline-block;
+            position: relative;
+            animation: heartbeat .5s infinite alternate;
+        }
+
+        #heart > .bottom {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            /* border: 1px red solid; */
+            transform: rotate(45deg);
+        }
+
+        #heart > .left {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            /* border: 1px red solid; */
+            position: absolute;
+            bottom: 100%;
+            right: 100%;
+            /* 通过旋转，使圆的X轴编程斜下方45°。 */
+            transform: rotate(45deg) translateX(75px);
+            border-radius: 50% 0 0 50%;
+        }
+
+        #heart > .right {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            /* border: 1px red solid; */
+            border-radius: 50%;
+            position: absolute;
+            bottom: 100%;
+            left: 100%;
+            transform: rotate(45deg) translateY(75px);
+            border-radius: 50% 50% 0 0;
+        }
+    </style>
+    
+</head>
+<body>
+    <div id="heart">
+        <div class="left"></div>
+        <div class="right"></div>
+        <div class="bottom"></div>
+    </div>
+</body>
+</html>
